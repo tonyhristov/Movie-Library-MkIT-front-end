@@ -1,0 +1,7 @@
+.welcome-component {
+    background-image: url(../../images/itunes.jpeg);
+    background-position: center;
+    background-size: cover;
+    padding: 10.25%;
+    width: 100%;
+  }

@@ -1,0 +1,32 @@
+.navigation {
+    overflow: hidden;
+    border-bottom: solid grey;
+    background: whitesmoke;
+  }
+  
+.header-links {
+    display: block;
+    float: left;
+}
+
+.form{
+    display: right;
+    float: right;
+    padding: 15px 17px;
+}
+
+.form-input{
+    border-radius: 5px;
+    padding: 15px;
+    margin-right: 15px;
+    border-color: green;
+    background-color: white;
+}
+
+.form-button{
+    border-radius: 5px;
+    padding: 15px;
+    margin-right: 15px;
+    border-color: green;
+    background-color: white;
+}
