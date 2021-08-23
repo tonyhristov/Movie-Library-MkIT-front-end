@@ -1,13 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext , useState} from "react";
 import getNavigation from "../../utils/navigation";
 import styles from "./index.module.css";
 import LinkComponent from "../link";
 import UserContext from "../../context";
+import getMovies from "../../utils/getMovies";
+import Input from "../input";
+import Button from "../button";
 
 const Header = () => {
+  const [movie, setMovie] = useState("");
   const context = useContext(UserContext);
   const { user } = context;
   const links = getNavigation(user);
+
+  const handleSubmit = async (event) =>{
+    event.preventDefault();
+
+   const MoviesPromise = await getMovies(movie)
+    
+  }
 
   return (
     <header className={styles.navigation}>
@@ -24,9 +35,11 @@ const Header = () => {
         })}
       </div>
       <div>
-        <form action="/" method="get" className={styles.form}>
-        <input type="text" id="header-search" placeholder="search movies" name="header-search" className={styles["form-input"]}/>
-        <button type="submit" className={styles["form-button"]} >Search</button>
+        <form onSubmit={handleSubmit} className={styles.form}>
+        <Input id="header-search" placeholder="search movies"
+        onChange={(e) => setMovie(e.target.value)} 
+        type="text" />
+        <Button text="Search"/>
         </form>
       </div>
       
