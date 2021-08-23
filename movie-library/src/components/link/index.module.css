@@ -1,0 +1,21 @@
+.header-list-item {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 15px 15px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 25px;
+  }
+ 
+  .button-list-item {
+    
+    color: white;
+    background-color: blue;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    margin-left: 45px;
+  }

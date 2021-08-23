@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import UserContext from "./context";
+import getCookie from "./utils/cookie";
+// import Loading from "./components/loading";
 
-function App() {
+const App = (props) => {
+  const [user, setUser] = useState(null);
+//   const [loading, setLoading] = useState(true);
+
+  const logIn = (user) => {
+    setUser({ ...user, loggedIn: true });
+  };
+
+  const logout = () => {
+    document.cookie = "x-auth-token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+    setUser({ loggedIn: false });
+  };
+
+//   useEffect(() => {
+//     const token = getCookie("x-auth-token");
+
+//     if (!token) {
+//       logout();
+//       setLoading(false);
+//       return;
+//     }
+
+//     fetch("http://localhost:9999/api/user/verify", {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: token,
+//       },
+//     })
+//       .then((promise) => {
+//         return promise.json();
+//       })
+//       .then((response) => {
+//         if (response.status) {
+//           logIn({
+//             username: response.user.username,
+//             id: response.user._id,
+//           });
+//         } else {
+//           logout();
+//         }
+//         setLoading(false);
+//       });
+//   }, []);
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{ user, logIn, logout }}>
+      {props.children}
+    </UserContext.Provider>
   );
-}
+};
 
 export default App;
