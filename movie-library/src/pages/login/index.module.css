@@ -1,0 +1,20 @@
+.login {
+   
+    text-align: center;
+    padding: 3%;
+    width: 45%;
+    height: 85%;
+    position: relative;
+    left: 25%;
+    
+  }
+  .h1 {
+    
+    padding-bottom: 25px;
+    text-align: center;
+  }
+  .form {
+    float: top;
+    position: relative;
+    top: 5%;
+  }

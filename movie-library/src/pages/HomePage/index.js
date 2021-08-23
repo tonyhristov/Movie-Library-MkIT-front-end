@@ -7,7 +7,6 @@ const HomePage = () => {
    return (
       <PageLayout>
             <WelcomeSearch/>
-
             <YourFavourites/>
       </PageLayout>
    )
