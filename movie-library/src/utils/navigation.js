@@ -17,7 +17,7 @@ const getNavigation = (user) => {
     const authLinks = [
         {
           title: "My Movie Collection",
-          link: `/my-profile/${user && user.id}`,
+          link: `/${user && user.id}`,
         },
       ];
     

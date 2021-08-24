@@ -9,7 +9,7 @@ const YourFavourites = () => {
             <h1 >You Favorites</h1>
         </div>
         <div>
-        <img src={image} alt="Logo"  className={styles.first}/>
+        <img src={image} alt="Logo"  className={styles.image}/>
         <img src={image} alt="Logo"  className={styles.image}/>
         <img src={image} alt="Logo"  className={styles.image}/>
         <img src={image} alt="Logo"  className={styles.image}/>

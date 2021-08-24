@@ -24,7 +24,7 @@ const LoginPage = () => {
       },
       (user) => {
         context.logIn(user);
-        history.push(`/home/${user.id}`);
+        history.push(`/${user.id}`);
       },
       (e) => {
         alert("Username or Password are not valid! Please try correct ones.");
