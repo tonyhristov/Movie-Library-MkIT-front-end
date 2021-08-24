@@ -6,6 +6,7 @@ import getMovie from '../../utils/getMovie'
 import removeFavorite from '../../utils/removeFavorite'
 import addNote from '../../utils/addNote'
 import getLastNote from '../../utils/getLastNote'
+import CustomizedRatings from '../../components/rating'
 
 
 const MovieDetails = () => {
@@ -67,6 +68,11 @@ const MovieDetails = () => {
             <button className={styles.button} onClick={handleSubmit}>Remove From Favorites</button>
         </div>
       </div>
+
+      <div className={styles["rating-container"]}>
+      <CustomizedRatings/>
+      </div>
+
       <div>
         <textarea onChange={handleChangeNotes} 
         
