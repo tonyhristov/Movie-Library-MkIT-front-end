@@ -1,39 +1,43 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from './index.module.css'
-import getFavorites from '../../utils/getFavorites';
-import getMovie from '../../utils/getMovie';
+import getFavorites from '../../utils/getFavorites'
+import getMovie from '../../utils/getMovie'
 
 const FavouritesAuth = () => {
-    const [favoriteMovies, setFavoriteMovies] = useState([]);
-    const params = useParams();
+    const [favoriteMovies, setFavoriteMovies] = useState([])
+    const params = useParams()
 
 
-    const getFavoriteMovies = useCallback(async () => {
-        const favorites = await getFavorites(params.userId);
+  const getFavoriteMovies = useCallback(async () => {
+      const favorites = await getFavorites(params.userId);
         favorites.map(async (favorite) => {
-            const fetch = await getMovie(favorite)
-            setFavoriteMovies(oldArr=>[...oldArr, fetch.image.medium])
-            })
-      }, []);
+        const fetch = await getMovie(favorite)
+        setFavoriteMovies(oldArr=>[...oldArr, fetch])
+      })
+  }, [])
 
   const renderChats = () => {
         return favoriteMovies.map( (favorite) => {
+          const image = favorite.image.medium
+          const movieId = `${params.userId}/movie-details/${favorite.id}`
             return (
-                <img src={favorite} alt="Logo" className={styles.image} />
-                );
+              <Link to={movieId}>
+              <img src={image} alt="Logo" className={styles.image} />
+              </Link>
+                )
           })
   };
 
   useEffect(() => {
-    getFavoriteMovies();
-  }, [getFavoriteMovies]);
+    getFavoriteMovies()
+  }, [getFavoriteMovies])
 
 
     return (
     <div>
         <div className={styles.center}>
-            <h1 >You Favorites</h1>
+            <h1 >Your Favorites</h1>
         </div>
         <div>
         <div>

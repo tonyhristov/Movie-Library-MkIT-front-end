@@ -3,7 +3,7 @@ import PageLayout from '../../components/page-layout'
 import WelcomeAuth from '../../components/welcome-auth';
 import FavouritesAuth from '../../components/favourites-auth';
 
-const HomePage = () => {
+const AuthHomePage = () => {
    return (
       <PageLayout>
             <WelcomeAuth/>
@@ -12,4 +12,4 @@ const HomePage = () => {
    )
 }
 
-export default HomePage
+export default AuthHomePage
