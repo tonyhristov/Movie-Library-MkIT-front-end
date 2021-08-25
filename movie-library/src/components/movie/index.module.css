@@ -1,0 +1,60 @@
+.container {
+    display: inline-flex;
+}
+
+.rating-container{
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+.info  {
+    margin-top: 70px;
+    margin-left: 120px;
+    margin-right: 190px;
+    width: 80%;
+  }
+
+.image{
+    margin-left: 130px;
+    margin-top: 50px;
+    width: 280px;
+}
+
+.divider{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.button-remove {
+  background-color: red; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+
+    display: block;
+    margin-top: 20px;
+}
+
+.button-add {
+    background-color: green; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+  
+      display: block;
+      margin-top: 20px;
+  }
