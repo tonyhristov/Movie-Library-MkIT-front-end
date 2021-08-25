@@ -18,7 +18,6 @@ const Navigation = () => {
       <Switch>
         <Route path="/" exact component={HomePage} />
         
-        
         <Route path="/login">
           {loggedIn ? <Redirect to="/" /> : <LoginPage />}
         </Route>
@@ -30,10 +29,6 @@ const Navigation = () => {
         <Route path="/:userId/movie-details/:movieId">
           {loggedIn ? <MovieDetailsPage /> : <Redirect to="/login" />}
         </Route>
-
-        {/* <Route path="/:userId/search/">
-          {loggedIn ? <SearchPage /> : <Redirect to="/login" />}
-        </Route> */}
 
         <Route path="/:userId/search/:movie">
           {loggedIn ? <SearchPage /> : <Redirect to="/login" />}

@@ -1,5 +1,6 @@
 const getLastNote = async (userId, movieId) => {
-    const promise = await fetch(`http://localhost:9999/api/notes/getNote`,{
+    try{
+      const promise = await fetch(`http://localhost:9999/api/notes/getNote`,{
       method: "GET",
       headers:{
         "Content-Type": "application/json",
@@ -8,8 +9,10 @@ const getLastNote = async (userId, movieId) => {
       }
     });
     const lastNote = await promise.json();
-    
-    return lastNote;
+    return lastNote; 
+    } catch(err) {
+      return {"id":"Your private notes and comments about the movie"}
+    }
   };
   
   export default getLastNote;

@@ -1,4 +1,4 @@
-import React, { Component, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./index.module.css";
 import PageLayout from "../../components/page-layout";
@@ -34,7 +34,6 @@ const RegisterPage = () => {
 
   return (
     <PageLayout>
-      
         <div className={styles.register}>
           <h1 className={styles["h1"]}>Register Page</h1>
 
@@ -50,7 +49,6 @@ const RegisterPage = () => {
             </form>
           </div>
         </div>
-      
     </PageLayout>
   );
 };

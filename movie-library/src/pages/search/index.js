@@ -1,13 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from './index.module.css';
 import PageLayout from "../../components/page-layout";
 import Search from '../../components/search';
 import getMovies from '../../utils/getMovies';
 import Movie from '../../components/movie';
-
-
-
 const SearchPage = () => {
     const [movies, setMovies] = useState([])
     const params = useParams()

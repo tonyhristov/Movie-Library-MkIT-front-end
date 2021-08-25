@@ -1,4 +1,3 @@
-
 const getMovies = async (movie) =>{
     const promise = await fetch('http://localhost:9999/api/movies/', {
         method: "GET",
