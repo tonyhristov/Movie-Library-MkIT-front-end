@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import getFavorites from "../../utils/getFavorites";
 import removeFavorite from "../../utils/removeFavorite";
 import addFavorite from "../../utils/addFavorite";
@@ -42,26 +42,28 @@ const Movie = ({ image, name, premiered, genres, runtime, url, summary, id }) =>
     useEffect(()=>{
         button()
     }, [button])
-
-  return (
-    <div className={styles.container}>
-        <div>
-            <img src={image ? image.medium : ""} alt="Logo" className={styles.image} />
+    
+    return (
+      <div className={styles.container}>
+          <div>
+              <Link to={`/${params.userId}/movie-details/${id}`}>
+                  <img src={image ? image.medium : ""} alt="Logo" className={styles.image} />
+              </Link>
+          </div>
+          <div className={styles.info}>
+              <h1>{name} ({premiered})</h1>
+              <div className={styles.container}>
+                  <p>{genres.join(", ")}</p>
+                  <p className={styles.divider}>|</p>
+                  <p>{runtime} minutes</p>
+              </div>
+              <p>{summary}</p>
+              <a href={url} >Visit official site</a>
+  
+              <div>{renderButton()}</div>
+          </div>
         </div>
-        <div className={styles.info}>
-            <h1>{name} ({premiered})</h1>
-            <div className={styles.container}>
-                <p>{genres.join(", ")}</p>
-                <p className={styles.divider}>|</p>
-                <p>{runtime} minutes</p>
-            </div>
-            <p>{summary}</p>
-            <a href={url} >Visit official site</a>
-
-            <div>{renderButton()}</div>
-        </div>
-      </div>
-  );
+    )
 };
 
 export default Movie;
