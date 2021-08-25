@@ -17,7 +17,7 @@ const FavouritesAuth = () => {
       })
   }, [])
 
-  const renderChats = () => {
+  const renderMovies = () => {
         return favoriteMovies.map( (favorite) => {
           const image = favorite.image.medium
           const movieId = `${params.userId}/movie-details/${favorite.id}`
@@ -41,7 +41,7 @@ const FavouritesAuth = () => {
         </div>
         <div>
         <div>
-          <div >{renderChats()}</div>;
+          <div >{renderMovies()}</div>;
         </div>
         </div>
     </div>
