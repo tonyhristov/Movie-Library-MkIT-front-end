@@ -8,7 +8,6 @@ import addNote from '../../utils/addNote'
 import getLastNote from '../../utils/getLastNote'
 import CustomizedRatings from '../../components/rating'
 
-
 const MovieDetails = () => {
     const [movie, setMovie] = useState([])
     const [image, setImage] = useState([])
@@ -20,9 +19,10 @@ const MovieDetails = () => {
     const history = useHistory()
 
     const handleSubmit = async () => {
+      console.log(params.movieId);
       await removeFavorite(params.userId, params.movieId)
       history.push(`/${params.userId}`)
-    }
+  }
 
     const handleChangeNotes =  (event) =>{
       setNotes(event.target.value)
@@ -30,14 +30,16 @@ const MovieDetails = () => {
 
     const handleSubmitNotes = async() => {
       await addNote(params.userId, params.movieId, notes)
+      alert("You have added a note")
     } 
 
 
     const fetchMovie = useCallback(async () => {
         const movieId = params.movieId
         const fetch = await getMovie(movieId)
-        const lastNote = await getLastNote(params.userId, params.movieId)
-        setLastNote(Object.values(lastNote))
+        const fetchNote = await getLastNote(params.userId, params.movieId)
+        console.log(fetchNote);
+        setLastNote(Object.values(fetchNote))
         setMovie(fetch)
         setImage(fetch.image.medium)
         setGenre(fetch.genres.join(", "))

@@ -4,7 +4,7 @@ const addFavorite = async (userId, movieId) => {
           method: "PUT",
           body: JSON.stringify({
             "userId": userId,
-            "movieId": movieId
+            "movieId": `${movieId}`
           }),
           headers: {
             "Content-Type": "application/json",

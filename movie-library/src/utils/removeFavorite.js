@@ -4,13 +4,14 @@ const removeFavorite = async (userId, movieId) => {
           method: "PUT",
           body: JSON.stringify({
             "userId": userId,
-            "movieId": movieId
+            "movieId": `${movieId}`
           }),
           headers: {
             "Content-Type": "application/json",
           },
         });
         const response = await promise.json();
+        return response
       } catch (e) {
         alert("This movie is not in you list");
       }

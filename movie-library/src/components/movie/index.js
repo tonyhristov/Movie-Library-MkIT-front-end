@@ -26,19 +26,17 @@ const Movie = ({ image, name, premiered, genres, runtime, url, summary, id }) =>
     }, [])
 
     const renderButton = () => {  
-        if(userFavoritesMovies.length !== 0){
-        return userFavoritesMovies.map((movieId) =>{
-            if(movieId === id) {
-                return <button className={styles["button-remove"]} onClick={handleSubmitRemove}>Remove From Favorites</button>
+            if(userFavoritesMovies.length !== 0){
+                return userFavoritesMovies.map((movieId) =>{
+                    if(movieId == id) {
+                        return <button className={styles["button-remove"]} onClick={handleSubmitRemove}>Remove From Favorites</button>
+                    }else{
+                        return <button className={styles["button-add"]} onClick={handleSubmitAdd}>Add to Favorites</button>
+                    }
+                })
             }else{
                 return <button className={styles["button-add"]} onClick={handleSubmitAdd}>Add to Favorites</button>
             }
-        })
-    }else{
-        return <button className={styles["button-add"]} onClick={handleSubmitAdd}>Add to Favorites</button>
-    }
-
-
     }
 
     useEffect(()=>{
